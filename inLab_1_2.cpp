@@ -7,12 +7,12 @@ int main(){
     int n=size(a);
     while(i!=(n-1)){
         i ++;
-        cout << x << " " << y << endl;
+        cout << a[i] << " ";
         if(a[i]==1) y++;
         else if(a[i]==2) x--;
         else if(a[i]==3) y--;
         else if(a[i]==4) x++;
-        if(x==0 and y==0){
+        if(i > 1 and x==0 and y==0){
             x=1;
             y=1;
         }
