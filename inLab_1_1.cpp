@@ -6,19 +6,24 @@ int main(){
     cin >> a;
     ans += a;
     for(i=2;i<=30;i++){
-        if(i%2==0){
-            a = a*1.2;
-            ans += a;
-        }
-        else if(i==15){
+        if(i==15){
             continue;
         }
-        else if(i%2!=0){
-            a = a*0.8;
-            ans += a;
-        }
+        else{
+            switch (i%2){
+                case 0:
+                    a = a*1.2;
+                    ans += a;
+                    break;
+                case 1:
+                    a = a*0.8;
+                    ans += a;
+                    break;
+                default:
+                    continue;
+            }
+       } 
     }
-
     cout << ans;
     return 0;
 }
