@@ -2,8 +2,8 @@
 using namespace std;
 int main(){
     int num = 10;
-    int *ptr;
-    ptr = &num;
+    int *ptr = &num;
+    //ptr = &num;
     cout << num << endl;
     cout << &num << endl;
     cout << ptr << endl;

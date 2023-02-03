@@ -13,6 +13,7 @@ int main(){
     int var2 = 2;
     callByValue(var1);
     callByReference(&var2);
+    
     cout << "var1 : " << var1 << endl;
     cout << "var2 : " << var2 << endl;
     return 0;
