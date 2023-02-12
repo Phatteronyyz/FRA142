@@ -1,3 +1,7 @@
+#include<bits/stdc++.h>
+#include "Node.h"
+using namespace std;
+
 Node::Node(){
     value = 0;
     next = NULL;
@@ -20,8 +24,8 @@ void Node::setValue(int newValue){
     value = newValue;
 }
 
-Node Node::getNext(){
-    return *next;
+Node* Node::getNext(){
+    return next;
 }
 
 void Node::setNext(Node *newNext){
