@@ -4,7 +4,7 @@
 class linkedList
 {
     private:
-        int size;
+        int size = 0;
 
     public:
         Node *curr;
