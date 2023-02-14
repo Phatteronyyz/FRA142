@@ -37,6 +37,7 @@ int main(){
     ll.insert(&node1,1);
     ll.insert(&node2,1);
     ll.insert(&node3,3);
+
     ll.remove(3);
 
     print(ll);
