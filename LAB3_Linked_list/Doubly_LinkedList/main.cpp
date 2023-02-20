@@ -6,29 +6,6 @@ using namespace std;
 int main(){
     char c;
     linkedList link1;
-    // cout << "start" << endl;
-    // while(true){
-    //     cin >> c;
-    //     if(c=='e') break;
-    //     else{
-    //         int n,pos;
-    //         if(c=='i'){
-    //             cin >> n >> pos;
-    //             Node node1;
-    //             node1.setValue(n);
-    //             link1.insert(&node1,pos);
-    //         }
-    //         else if(c=='r'){
-    //             cin >> pos;
-    //             link1.remove(pos);
-    //         }
-    //     }
-    // }
-    // link1.curr = link1.head;
-    // while (link1.curr != NULL){
-    //     cout << link1.curr->getValue() << " ";
-    //     link1.curr = link1.curr->getRight();
-    // }
 
     Node Node1;
     Node Node2;
@@ -43,31 +20,32 @@ int main(){
     link1.insert(&Node2,1);
     link1.insert(&Node3,1);
     link1.insert(&Node4,2);
+    cout << link1.gettail();
 
-    cout << link1.getSize() << endl;
-    link1.curr = link1.head;
-    while (link1.curr != NULL)
-    {
-        cout << link1.curr->getValue() << endl;
-        link1.curr = link1.curr->getRight();
-    }
+    // cout << link1.getSize() << endl;
+    // link1.curr = link1.head;
+    // while (link1.curr != NULL)
+    // {
+    //     cout << link1.curr->getValue() << endl;
+    //     link1.curr = link1.curr->getRight();
+    // }
 
-    // cout << "head : " << link1.head->getValue() << endl;
-    // cout << "tail : " << link1.tail->getValue() << endl;
-    // cout << link1.tail->getLeft()->getValue() << endl;
-    cout << "----------------------" << endl;
-    link1.remove(0);
-    link1.remove(2);
+    // // cout << "head : " << link1.head->getValue() << endl;
+    // // cout << "tail : " << link1.tail->getValue() << endl;
+    // // cout << link1.tail->getLeft()->getValue() << endl;
+    // cout << "----------------------" << endl;
+    // link1.remove(0);
+    // link1.remove(2);
 
-    cout << link1.getSize() << endl;
-    // cout << link1.head->getValue() << endl;
-    // cout << link1.tail->getValue() << endl;
+    // cout << link1.getSize() << endl;
+    // // cout << link1.head->getValue() << endl;
+    // // cout << link1.tail->getValue() << endl;
 
-    link1.curr = link1.head;
-    while (link1.curr != NULL)
-    {
-        cout << link1.curr->getValue() << endl;
-        link1.curr = link1.curr->getRight();
-    }
+    // link1.curr = link1.head;
+    // while (link1.curr != NULL)
+    // {
+    //     cout << link1.curr->getValue() << endl;
+    //     link1.curr = link1.curr->getRight();
+    // }
     return 0;
 }

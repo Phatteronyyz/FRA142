@@ -9,11 +9,16 @@ class linkedList
     public:
         Node *curr;
         Node *head;
-        Node *tail;
         Node *temp;
         linkedList();
         void insert(Node *newNode, int pos);
         Node *remove(int pos);
         int getSize();
+        Node *gettail();
+
+
+    protected:
+        Node *tail;
+
 };
 #endif

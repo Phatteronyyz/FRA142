@@ -5,14 +5,18 @@ class linkedList
 {
     private:
         int size = 0;
+        
+    protected:
+        Node *tail;
 
     public:
         Node *curr;
         Node *head;
-        Node *tail;
         linkedList();
         void insert(Node *newNode, int pos);
         Node *remove(int pos);
         int getSize();
+        Node *gettail();
+
 };
 #endif

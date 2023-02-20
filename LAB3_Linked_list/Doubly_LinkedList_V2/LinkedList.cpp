@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-#include "stack.h"
+#include "linkedlist.h"
 using namespace std;
 
 linkedList::linkedList()
@@ -51,4 +51,8 @@ Node *linkedList::remove(int pos)
     }
     
     return head;
+}
+
+Node* Node::gettail(){
+    return tail;
 }

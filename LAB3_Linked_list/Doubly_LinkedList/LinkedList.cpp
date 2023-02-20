@@ -118,3 +118,7 @@ Node *linkedList::remove(int pos)
     else cout << "Error, position not correct can't remove this position" << endl ;
     return head;
 }
+
+Node* linkedList::gettail(){
+    return tail;
+}
