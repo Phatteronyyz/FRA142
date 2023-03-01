@@ -15,10 +15,11 @@ void Queue :: enqueue(Node *newNode){
 }
 
 Node *Queue :: dequeue(){
+    Node *temp = tail;
     remove(getSize()-1);
+    return temp;
 }
 
 int Queue :: peek(){
     if(getSize()>0) return tail->getValue();
-    else cout << "Queue is empty" << endl;
 }

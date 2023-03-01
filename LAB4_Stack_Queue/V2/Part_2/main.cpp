@@ -23,6 +23,7 @@ int main(){
     st.pop();
     st.push(&node4);
     st.push(&node3);
+    st.pop();
     cout << st.peek();
     cout << endl;
 
@@ -31,6 +32,7 @@ int main(){
     q.dequeue();
     q.enqueue(&node2);
     q.enqueue(&node3);
+    q.dequeue();
     cout << q.peek();
 
 

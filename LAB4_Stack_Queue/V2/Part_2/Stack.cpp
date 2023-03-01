@@ -15,10 +15,12 @@ void Stack :: push(Node *newNode){
 }
 
 Node *Stack :: pop(){
+    Node *temp = head;
     remove(0);
+    return temp;
 }
 
 int Stack :: peek(){
-    if(getSize()>0) return head->getValue();
-    else cout << "Stack is empty" << endl;
+    if(getSize()==0) cout << "Stack is empty" << endl;
+    else return head->getValue();
 }
