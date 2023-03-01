@@ -25,7 +25,6 @@ void linkedList::insert(Node *newNode, int pos)
             head = curr;
             tail = curr;
             size+=1;
-            cout << "add " << newNode->getValue() << " at first element" << endl;
         }
         else if (pos == 0)
         {
@@ -35,7 +34,6 @@ void linkedList::insert(Node *newNode, int pos)
             curr->getRight()->setLeft(curr);
             head = curr;
             size+=1;
-            cout << "add "<< newNode->getValue() <<" to first position" << endl;
         }
         else if (pos == size)
         {
@@ -50,7 +48,6 @@ void linkedList::insert(Node *newNode, int pos)
             curr = curr->getRight();
             tail = curr;
             size+=1;
-            cout << "add " << newNode->getValue() << " to last position" << endl;
         }
         else
         {
@@ -83,7 +80,6 @@ Node *linkedList::remove(int pos)
             curr = head;
             head = head->getRight();
             size -= 1;
-            cout << "remove " << temp->getValue() << " from first position" << endl;
         }
         else if (pos == size-1)
         {
@@ -94,7 +90,6 @@ Node *linkedList::remove(int pos)
             tail = curr;
             curr->setRight(NULL);
             size -= 1;
-            cout << "remove " << temp->getValue() << " from last position" << endl;
         }
         else{
             curr = head;
@@ -112,7 +107,6 @@ Node *linkedList::remove(int pos)
             temp->setRight(NULL);
             temp->setLeft(NULL);
             size -= 1;
-            cout << "remove " << tempp->getValue() << " from position " << pos << endl;
         }
     }
     else cout << "Error, position not correct can't remove this position" << endl ;
