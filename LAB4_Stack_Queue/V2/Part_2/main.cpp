@@ -20,15 +20,17 @@ int main(){
 
     cout << "-------Stack-------" << endl;
     st.push(&node1);
-    st.push(&node2);
     st.pop();
     st.push(&node4);
+    st.push(&node3);
     cout << st.peek();
     cout << endl;
 
     cout << "-------Queue-------" << endl;
-    q.enqueue(&node3);
     q.enqueue(&node5);
+    q.dequeue();
+    q.enqueue(&node2);
+    q.enqueue(&node3);
     cout << q.peek();
 
 

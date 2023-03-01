@@ -19,5 +19,6 @@ Node *Stack :: pop(){
 }
 
 int Stack :: peek(){
-    return head->getValue();
+    if(getSize()>0) return head->getValue();
+    else cout << "Stack is empty" << endl;
 }
