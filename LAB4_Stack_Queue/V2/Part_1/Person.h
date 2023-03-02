@@ -8,11 +8,14 @@ class Person{
     public:
         string name;
         int height;
-        int age;
         Person();
         Person(string n, int h, int a);
         ~Person();
         void showPersonInfo();
+
+    protected :
+        int age;
+
 };
 
 class Student: public Person{

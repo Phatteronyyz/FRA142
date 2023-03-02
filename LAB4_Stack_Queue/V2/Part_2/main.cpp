@@ -7,33 +7,26 @@ int main(){
     Stack st;
     Queue q;
 
-    Node node1;
-    Node node2;
-    Node node3;
-    Node node4;
-    Node node5;
-    node1.setValue(10);
-    node2.setValue(20);
-    node3.setValue(30);
-    node4.setValue(40);
-    node5.setValue(50);
-
     cout << "-------Stack-------" << endl;
-    st.push(&node1);
+    st.push(10);
+    st.push(12);
+    st.push(20);
     st.pop();
-    st.push(&node4);
-    st.push(&node3);
+    st.push(30);
     st.pop();
-    cout << st.peek();
-    cout << endl;
+    st.push(99);
+    st.pop();
+    cout << st.getSize() << endl;
+    cout << "Top : " << st.peek() << endl;
 
     cout << "-------Queue-------" << endl;
-    q.enqueue(&node5);
+    q.enqueue(10);
+    q.enqueue(30);
     q.dequeue();
-    q.enqueue(&node2);
-    q.enqueue(&node3);
     q.dequeue();
-    cout << q.peek();
+    q.enqueue(55);
+    cout << "Top : " << q.peek() << endl;
+
 
 
     return 0;

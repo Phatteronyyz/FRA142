@@ -2,24 +2,30 @@
 #include "Queue.h"
 using namespace std;
 
-Queue :: Queue():linkedList(){
+Queue :: Queue():LinkedList(){
 
 }
 
 Queue :: ~Queue(){
-
+    
 }
 
-void Queue :: enqueue(Node *newNode){
-    insert(newNode,0);
+void Queue :: enqueue(int n){
+    Node *newNode = new Node();
+    newNode->setValue(n);
+    insert(newNode,getSize());
 }
 
 Node *Queue :: dequeue(){
     Node *temp = tail;
-    remove(getSize()-1);
+    remove(0);
     return temp;
 }
 
 int Queue :: peek(){
-    if(getSize()>0) return tail->getValue();
+    if(getSize()==0){
+        cout << "Queue is empty" << endl;
+        return 0;
+    }
+    else if(getSize()>0) return head->getValue();
 }

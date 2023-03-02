@@ -2,11 +2,11 @@
 #define STACK_H
 #include "LinkedList.h"
 
-class Stack : public linkedList{
+class Stack : public LinkedList{
     public :
         Stack();
         ~Stack();  
-        void push(Node *newNode);
+        void push(int n);
         Node *pop();
         int peek();
 };

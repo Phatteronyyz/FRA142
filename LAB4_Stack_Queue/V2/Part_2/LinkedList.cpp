@@ -2,7 +2,7 @@
 #include "linkedList.h"
 using namespace std;
 
-linkedList::linkedList()
+LinkedList::LinkedList()
 {
     head = NULL;
     tail = NULL;
@@ -10,12 +10,12 @@ linkedList::linkedList()
     size = 0;
 }
 
-int linkedList::getSize()
+int LinkedList::getSize()
 {
     return size;
 }
 
-void linkedList::insert(Node *newNode, int pos)
+void LinkedList::insert(Node *newNode, int pos)
 {
         if (pos == 0 and size == 0)
         {
@@ -69,7 +69,7 @@ void linkedList::insert(Node *newNode, int pos)
         }
 }
 
-Node *linkedList::remove(int pos)
+Node *LinkedList::remove(int pos)
 {
     if (size != 0 and pos < size)
     {

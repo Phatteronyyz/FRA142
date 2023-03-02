@@ -2,11 +2,11 @@
 #define QUEUE_H
 #include "LinkedList.h"
 
-class Queue : public linkedList{
+class Queue : public LinkedList{
     public :
         Queue();
         ~Queue();  
-        void enqueue(Node *newNode);
+        void enqueue(int n);
         Node *dequeue();
         int peek();
 };

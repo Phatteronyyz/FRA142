@@ -1,2 +1,2 @@
 all:
-	g++ .\LinkedList.cpp .\main.cpp .\Node.cpp .\Queue.cpp .\Stack.cpp -I. -ostnQ
+	g++ .\LinkedList.cpp .\postlab.cpp .\Node.cpp .\Queue.cpp .\Stack.cpp -I. -ostnQ

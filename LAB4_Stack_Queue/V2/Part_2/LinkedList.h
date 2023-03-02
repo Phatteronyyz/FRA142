@@ -1,7 +1,7 @@
 #ifndef LINKEDLIST_H
 #define LINKEDLIST_H
 #include "Node.h"
-class linkedList
+class LinkedList
 {
     private:
         int size = 0;
@@ -10,7 +10,7 @@ class linkedList
         Node *tail;
         Node *curr;
         Node *head;
-        linkedList();
+        LinkedList();
         void insert(Node *newNode, int pos);
         Node *remove(int pos);
         int getSize();
