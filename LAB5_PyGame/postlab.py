@@ -1,53 +1,72 @@
-import pygame as pg
-from math import *
-pg.init()
+import pygame
+import math
 
-win_x, win_y = 1700, 900
+pygame.init()
 
-screen = pg.display.set_mode((win_x, win_y))
+# set up the display
+screen_width = 800
+screen_height = 600
+screen = pygame.display.set_mode((screen_width, screen_height))
 
-posX = 0
-posY = 800
-g = 4
-u = 1
-degree = 60
+# set up the clock
+clock = pygame.time.Clock()
 
-rad = radians(degree)
+# define the colors
+white = (255, 255, 255)
+black = (0, 0, 0)
+red = (255, 0, 0)
 
-time = 0
+# define the projectile
+class Projectile:
+    def __init__(self, x, y, angle, velocity):
+        self.x = x
+        self.y = y
+        self.angle = angle
+        self.velocity = velocity
+        self.gravity = 9.8
+        self.time = 0
+        self.radius = 10
 
-state = 0
+    def update(self):
+        self.time += 0.1
+        self.x = int(self.x + self.velocity * math.cos(self.angle) * self.time)
+        self.y = int(self.y - self.velocity * math.sin(self.angle) * self.time + 0.5 * self.gravity * self.time**2)
 
-while(1):
-    screen.fill((255, 255, 255))
+    def draw(self):
+        pygame.draw.circle(screen, red, (self.x, self.y), self.radius)
 
-    if pg.mouse.get_pressed()[0] == 1:
-        u += 0.1
+# create a list of projectiles
+projectiles = []
 
-    posX += u
+# main game loop
+running = True
+while running:
+    # handle events
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
 
-    if(state==0):
-        posY -= u
-        if(posY<=400):
-            state = 1
+    # clear the screen
+    screen.fill(white)
 
-    if(state==1):
-        posY += u
-        if(posY>=800):
-            state = 0
+    # update and draw the projectiles
+    for projectile in projectiles:
+        projectile.update()
+        projectile.draw()
 
-    if(posX>win_x):
-        posX=0
+    # add a new projectile when the mouse is clicked
+    if pygame.mouse.get_pressed()[0]:
+        x, y = pygame.mouse.get_pos()
+        angle = math.atan2(screen_height - y, x)
+        velocity = 20
+        projectile = Projectile(0, screen_height, angle, velocity)
+        projectiles.append(projectile)
 
-    pg.draw.circle(screen,(102,178,255),(posX,posY),10)
-        
-    pg.time.delay(1)
+    # update the display
+    pygame.display.update()
 
-    time += 0.001
+    # set the frame rate
+    clock.tick(120)
 
-    pg.display.update()
-    
-    for event in pg.event.get():
-        if event.type == pg.QUIT: 
-            pg.quit()
-            exit()
+# quit the game
+pygame.quit()
