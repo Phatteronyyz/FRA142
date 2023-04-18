@@ -8,7 +8,7 @@ class Rectangle:
         self.w = w # Width
         self.h = h # Height
     def draw(self,screen):
-        pg.draw.rect(screen,(r,g,b),(self.x,self.y,self.w,self.h))
+        pg.draw.rect(screen,color,(self.x,self.y,self.w,self.h))
 
 class Button(Rectangle):
     def __init__(self, x=0, y=0, w=0, h=0):
@@ -90,11 +90,11 @@ run = True
 font = pg.font.Font('Kanit-Regular.ttf', 20) # font and fontsize
 text = font.render('', True, (11,36,71)) # (text,is smooth?,letter color,background color)
 textRect = text.get_rect() # text size
-firstnametext = font.render('Please input your first name :', True, (0,0,0), (255,255,255))
+firstnametext = font.render('Please input your first name :', True, (0,0,0))
 firsttextRect = firstnametext.get_rect()
-lastnametext = font.render('Please input your last name :', True, (0,0,0), (255,255,255))
+lastnametext = font.render('Please input your last name :', True, (0,0,0))
 lasttextRect = firstnametext.get_rect()
-agetext = font.render('Please input your age :', True, (0,0,0), (255,255,255))
+agetext = font.render('Please input your age :', True, (0,0,0))
 ageRect = firstnametext.get_rect()
 submittext = font.render('SUBMIT', True, (255,255,255))
 submitRect = firstnametext.get_rect()
@@ -125,17 +125,11 @@ while run:
     if btn.isMouseOn() and btn.isMousePress():
         text = font.render('Hello ' + input_box1.text + ' ' + input_box2.text + '! You are ' + input_box3.text + ' years old.', True, (11,36,71))
         showtext = True
-        r = 165
-        g = 215
-        b = 232
+        color = (165, 212, 232)
     elif btn.isMouseOn():
-        r = 87
-        g = 108
-        b = 188
+        color = (87, 108, 188)
     else:
-        r = 25
-        g = 55
-        b = 109
+        color = (25, 55, 109)
 
     btn.draw(screen)
     screen.blit(submittext, submitRect)

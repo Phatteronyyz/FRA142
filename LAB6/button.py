@@ -8,7 +8,7 @@ class Rectangle:
         self.w = w # Width
         self.h = h # Height
     def draw(self,screen):
-        pg.draw.rect(screen,(r,g,b),(self.x,self.y,self.w,self.h))
+        pg.draw.rect(screen,color,(self.x,self.y,self.w,self.h))
 
 class Button(Rectangle):
     def __init__(self, x=0, y=0, w=0, h=0):
@@ -38,17 +38,11 @@ while(run):
     screen.fill((255, 255, 255))
 
     if btn.isMouseOn() and btn.isMousePress():
-        r = 160
-        g = 32
-        b = 240
+        color = (160, 32, 240)
     elif btn.isMouseOn():
-        r = 128
-        g = 128
-        b = 128
+        color = (128, 128, 128)
     else:
-        r = 255
-        g = 0
-        b = 0
+        color = (255, 0, 0)
 
     btn.draw(screen)
     

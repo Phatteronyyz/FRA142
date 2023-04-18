@@ -33,10 +33,10 @@ while(run):
             run = False
 
     if keys[pg.K_w]:
-        h -= 0.5
+        h -= 0.3
     if keys[pg.K_a]:
-        x -= 0.5
+        x -= 0.3
     if keys[pg.K_s]:
-        h += 0.5
+        h += 0.3
     if keys[pg.K_d]:
-        x += 0.5
+        x += 0.3
